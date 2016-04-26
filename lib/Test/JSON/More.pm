@@ -53,7 +53,7 @@ Dai Okabayashi E<lt>bayashi@cpan.orgE<gt>
 
 =head1 SEE ALSO
 
-L<Other::Module>
+L<Test::JSON>
 
 
 =head1 LICENSE
