@@ -1,11 +1,22 @@
 use strict;
 use warnings;
+use Test::JSON::More;
 use Test::More;
 
-use Test::JSON::More;
+my $json = '{"foo":123,"bar":"baz"}';
+ok_json($json, 'ok_json');
+cmp_json($json, '{"bar":"baz","foo":123}', 'cmp_json');
 
-can_ok 'Test::JSON::More', qw/new/;
+my $schema = {
+    type       => "object",
+    properties => {
+        foo => { type => "integer" },
+        bar => { type => "string" }
+    },
+    required => [ "foo" ]
+};
+ok_json_schema($json, $schema, 'ok_json_schema');
 
-# write more tests
+is parsed_json->{foo}, 123;
 
 done_testing;

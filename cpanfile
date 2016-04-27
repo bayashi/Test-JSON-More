@@ -1,7 +1,11 @@
 requires 'perl', '5.008005';
 requires 'strict';
 requires 'warnings';
-requires 'Carp';
+requires 'Test::Differences';
+requires 'Test::Builder::Module';
+requires 'JSON';
+requires 'JSV::Validator';
+    requires 'Data::Walk', '== 1.00'; # for JSV 0.07
 
 on 'test' => sub {
     requires 'Test::More', '0.88';
