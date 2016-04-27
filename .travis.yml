@@ -11,6 +11,7 @@ perl:
   - "5.8"
 before_install:
   - cpanm -nq Devel::Cover::Report::Coveralls
+  - cpanm --quiet --installdeps --notest .
 script:
   perl Build.PL && ./Build build && cover -test
 after_success:
