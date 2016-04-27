@@ -4,7 +4,7 @@ requires 'warnings';
 requires 'Test::Differences';
 requires 'Test::Builder::Module';
 requires 'JSON';
-requires 'JSV::Validator'; # if you got a failure of JSV tests, you can try Data::Walk 1.00 insted of 2.00.
+requires 'JSV::Validator';
 
 on 'test' => sub {
     requires 'Test::More', '0.88';
