@@ -19,4 +19,10 @@ ok_json_schema($json, $schema, 'ok_json_schema');
 
 is parsed_json->{foo}, 123;
 
+ok_json_schema(
+    $json,
+    '{"required":["foo"],"type":"object","properties":{"bar":{"type":"string"},"foo":{"type":"integer"}}}',
+    'ok_json_schema json'
+);
+
 done_testing;

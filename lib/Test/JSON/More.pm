@@ -94,6 +94,7 @@ sub ok_json_schema {
     }
 
     my $jsv = _load_module('JSV::Validator')->new;
+    $schema = (!defined $schema || ref($schema) eq 'HASH') ? $schema : $JSON->decode($schema);
     my $res = $jsv->validate($schema, $PARSED_HASH);
 
     if ( $res->error || scalar @{$res->errors} ) {
@@ -181,6 +182,8 @@ Test passes if the two JSON strings are valid JSON and evaluate to the same data
     ok_json_schema($json, $schema, $test_name)
 
 Test passes if the string is valid JSON and fits the schema againsts its specification.
+
+C<$schema> is a perl hash reference or a string of JSON schema, whichever is OK.
 
 
 =head1 REPOSITORY
