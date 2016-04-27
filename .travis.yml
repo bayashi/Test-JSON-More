@@ -11,6 +11,9 @@ perl:
   - "5.8"
 before_install:
   - cpanm -nq Devel::Cover::Report::Coveralls
+  - cpanm -nq Module::Build
+  - cpanm -nq Module::Build::Pluggable
+  - cpanm -nq Module::Build::Pluggable::CPANfile
 script:
   perl Build.PL && ./Build build && cover -test
 after_success:
