@@ -4,6 +4,8 @@ use warnings;
 use Test::Differences;
 use parent 'Test::Builder::Module';
 
+our $VERSION = '0.01';
+
 my $JSON;
 
 sub import {
@@ -14,7 +16,7 @@ sub import {
 
     for my $func (qw/ ok_json cmp_json parsed_json ok_json_schema /) {
         no strict 'refs'; ## no critic
-        *{"${caller}::$func"} = \&{__PACKAGE__."::$func"};
+        *{"${caller}::$func"} = \&{"${class}::$func"};
     }
 
     $JSON = _load_module($json_module)->new;
@@ -25,7 +27,7 @@ sub _load_module {
 
     my $lib = $module;
     $lib =~ s!::!/!g;
-    require "$lib.pm";
+    require "$lib.pm"; ## no critic
     $lib->import;
 
     $module;
@@ -184,6 +186,12 @@ Test passes if the two JSON strings are valid JSON and evaluate to the same data
 Test passes if the string is valid JSON and fits the schema againsts its specification.
 
 C<$schema> is a perl hash reference or a string of JSON schema, whichever is OK.
+
+=head2 parsed_json
+
+    $ref = parsed_json();
+
+The C<parsed_json> function returns the perl hash ref or array ref that is the result of parsed JSON in a test methods(i.e. ok_json, cmp_json or ok_json_schema).
 
 
 =head1 REPOSITORY
