@@ -4,7 +4,7 @@ use warnings;
 use Test::Differences;
 use parent 'Test::Builder::Module';
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 my $JSON;
 
@@ -198,7 +198,7 @@ The C<parsed_json> function returns the perl hash ref or array ref that is the r
 
 =begin html
 
-<a href="http://travis-ci.org/bayashi/Test-JSON-More"><img src="https://secure.travis-ci.org/bayashi/Test-JSON-More.png"/></a> <a href="https://coveralls.io/r/bayashi/Test-JSON-More"><img src="https://coveralls.io/repos/bayashi/Test-JSON-More/badge.png?branch=master"/></a>
+<a href="http://travis-ci.org/bayashi/Test-JSON-More"><img src="https://secure.travis-ci.org/bayashi/Test-JSON-More.png?_t=1461806674"/></a> <a href="https://coveralls.io/r/bayashi/Test-JSON-More"><img src="https://coveralls.io/repos/bayashi/Test-JSON-More/badge.png?_t=1461806674&branch=master"/></a>
 
 =end html
 
