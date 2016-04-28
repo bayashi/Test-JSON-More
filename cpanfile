@@ -2,6 +2,7 @@ requires 'perl', '5.008005';
 requires 'strict';
 requires 'warnings';
 requires 'Test::Differences';
+requires 'parent';
 requires 'Test::Builder::Module';
 requires 'JSON';
 requires 'JSV::Validator';
