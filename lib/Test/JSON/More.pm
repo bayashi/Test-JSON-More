@@ -214,9 +214,11 @@ Dai Okabayashi E<lt>bayashi@cpan.orgE<gt>
 
 =head1 SEE ALSO
 
-L<Test::JSON>
+JSON validator: L<JSV::Validator>, L<JSV>
 
-L<JSV::Validator>, L<JSV>
+Test builder: L<Test::Builder::Module>
+
+Inspired by L<Test::JSON>
 
 
 =head1 LICENSE
