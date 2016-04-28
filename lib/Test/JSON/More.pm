@@ -133,9 +133,9 @@ Test::JSON::More - JSON Test Utility
 
     my $json = '{"foo":123,"bar":"baz"}';
 
-    ok_json($json, 'ok_json');
+    ok_json($json);
 
-    cmp_json($json, '{"bar":"baz","foo":123}', 'cmp_json');
+    cmp_json($json, '{"bar":"baz","foo":123}');
 
     my $schema = {
         type       => "object",
@@ -146,7 +146,7 @@ Test::JSON::More - JSON Test Utility
         required => [ "foo" ]
     };
 
-    ok_json_schema($json, $schema, 'ok_json_schema');
+    ok_json_schema($json, $schema);
 
     is parsed_json->{foo}, 123;
 
